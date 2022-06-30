@@ -4,23 +4,31 @@ import Header from './components/Header';
 import Categories from './components/Categories';
 import Sort from './components/Sort';
 import BeerBlock from './components/BeerBlock';
+import beers from './assets/beers.json';
 
- 
 function App() {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
         <Header />
-    <div class="content">
-      <div class="container">
-        <div class="content__top">
+    <div className="content">
+      <div className="container">
+        <div className="content__top">
           <Categories/>
           <Sort />
         </div>
-        <h2 class="content__title">Всё пиво</h2>
-        <div class="content__items">
-          <BeerBlock title="IPA" price="5 Br." />
-          <BeerBlock title="DIPA" price="5 Br."/>
-          <BeerBlock title="Stout" price="5 Br."/>
+        <h2 className="content__title">Всё пиво</h2>
+        <div className="content__items">
+          {
+            beers.map(obj =>
+            <BeerBlock key={obj.id}
+              title={obj.title} 
+              price={obj.price} 
+              image={obj.imageUrl}
+              sizes={obj.sizes}
+              types={obj.types}
+              />) 
+            }
+         
         </div>
       </div>
     </div>
