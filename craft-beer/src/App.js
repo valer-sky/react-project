@@ -21,7 +21,7 @@ function App() {
       <div className="container">
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/cart" element={<Cart/>}/>
+        {/* <Route path="/cart" element={<Cart/>}/> */}
         <Route path="*" element={<NotFound />}/>
       </Routes>
       </div>

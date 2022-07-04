@@ -39,5 +39,46 @@
         "price": 4,
         "category": 3,
         "reiting": 3
+    },
+    {
+        "id": 4,
+        "imageUrl": "https://s.wine.style/images_gen/144/144572/0_0_orig.jpg",
+        "title": "Лидское",
+        "types": [1],
+        "sizes": [0.5, 1],
+        "price": 4,
+        "category": 4,
+        "reiting": 3
+    },
+    {
+        "id": 5,
+        "imageUrl": "https://s.wine.style/images_gen/144/144570/0_0_orig.jpg",
+        "title": "Лидское",
+        "types": [1],
+        "sizes": [0.5, 1],
+        "price": 4,
+        "category": 5,
+        "reiting": 3
+    },
+    {
+        "id": 6,
+        "imageUrl": "https://marketing.by/upload/medialibrary/e38/NEIPA_BEER_CAN.png",
+        "title": "Лидское",
+        "types": [1],
+        "sizes": [0.5, 1],
+        "price": 4,
+        "category": 3,
+        "reiting": 3
+    },
+    {
+        "id": 7,
+        "imageUrl": "https://img.newgrodno.by/wp-content/uploads/1649759678eee-233x800.jpg",
+        "title": "Лидское",
+        "types": [1],
+        "sizes": [0.5, 1],
+        "price": 4,
+        "category": 3,
+        "reiting": 3
     }
+
 ]
