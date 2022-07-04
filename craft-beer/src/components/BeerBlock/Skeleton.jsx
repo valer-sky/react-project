@@ -12,7 +12,7 @@ const Sleleton = (props) => (
     foregroundColor="#ecebeb"
 
   >
-    <rect x="38" y="10" rx="15" ry="15" width="200" height="253" />
+    <rect x="16" y="10" rx="15" ry="15" width="250" height="250" />
     <rect x="83" y="85" rx="0" ry="0" width="5" height="40" />
     <rect x="7" y="275" rx="0" ry="0" width="50" height="0" />
     <rect x="0" y="276" rx="10" ry="10" width="280" height="27" />

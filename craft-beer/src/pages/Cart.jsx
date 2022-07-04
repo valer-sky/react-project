@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   return (
-    <div class="container container--cart">
+    <div className="container conteiner--cart">
       <div class="cart">
         <div class="cart__top">
           <h2 class="content__title"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,11 +26,12 @@ const Cart = () => {
         <div class="content__items">
           <div class="cart__item">
             <div class="cart__item-img">
-              <img class="beer-block__image" src="https://dodopizza-a.akamaihd.net/static/Img/Products/beer/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg" alt="beer" />
+              <img class="beer-block__image" src="https://img.pivo.by/05/ff/midnight-project-single-hop-player-enigma.jpg" alt="beer" />
             </div>
             <div class="cart__item-info">
-              <h3>Сырный цыпленок</h3>
-              <p>тонкое тесто, 26 см.</p>
+              <h4>MIDNIGHT PROJECT</h4>
+              <h3>Single Hop Player: Enigma</h3>
+              <p>самовывоз, 1 l</p>
             </div>
             <div class="cart__item-count">
               <div class="button button--outline button--circle cart__item-count-minus">
@@ -49,7 +51,7 @@ const Cart = () => {
               </div>
             </div>
             <div class="cart__item-price">
-              <b>770 ₽</b>
+              <b>12 Br</b>
             </div>
             <div class="cart__item-remove">
               <div class="button button--outline button--circle">
@@ -63,11 +65,12 @@ const Cart = () => {
           </div>
           <div class="cart__item">
             <div class="cart__item-img">
-              <img class="beer-block__image" src="https://dodopizza-a.akamaihd.net/static/Img/Products/beer/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg" alt="beer" />
+              <img class="beer-block__image" src="https://img.pivo.by/05/ff/midnight-project-single-hop-player-enigma.jpg" alt="beer" />
             </div>
             <div class="cart__item-info">
-              <h3>Сырный цыпленок</h3>
-              <p>тонкое тесто, 26 см.</p>
+              <h4>MIDNIGHT PROJECT</h4>
+              <h3>Single Hop Player: Enigma</h3>
+              <p>самовывоз, 1 l</p>
             </div>
             <div class="cart__item-count">
               <div class="button button--outline button--circle cart__item-count-minus">
@@ -87,7 +90,7 @@ const Cart = () => {
               </div>
             </div>
             <div class="cart__item-price">
-              <b>770 ₽</b>
+              <b>12 Br</b>
             </div>
             <div class="cart__item-remove">
               <div class="button button--outline button--circle">
@@ -101,11 +104,12 @@ const Cart = () => {
           </div>
           <div class="cart__item">
             <div class="cart__item-img">
-              <img class="beer-block__image" src="https://dodopizza-a.akamaihd.net/static/Img/Products/beer/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg" alt="beer" />
+              <img class="beer-block__image" src="https://img.pivo.by/05/ff/midnight-project-single-hop-player-enigma.jpg" alt="beer" />
             </div>
             <div class="cart__item-info">
-              <h3>Сырный цыпленок</h3>
-              <p>тонкое тесто, 26 см.</p>
+              <h4>MIDNIGHT PROJECT</h4>
+              <h3>Single Hop Player: Enigma</h3>
+              <p>самовывоз, 1 l</p>
             </div>
             <div class="cart__item-count">
               <div class="button button--outline button--circle cart__item-count-minus">
@@ -125,7 +129,7 @@ const Cart = () => {
               </div>
             </div>
             <div class="cart__item-price">
-              <b>770 ₽</b>
+              <b>12 Br</b>
             </div>
             <div class="cart__item-remove">
               <div class="button button--outline button--circle">
@@ -139,11 +143,12 @@ const Cart = () => {
           </div>
           <div class="cart__item">
             <div class="cart__item-img">
-              <img class="beer-block__image" src="https://dodopizza-a.akamaihd.net/static/Img/Products/beer/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg" alt="beer" />
+              <img class="beer-block__image" src="https://img.pivo.by/05/ff/midnight-project-single-hop-player-enigma.jpg" alt="beer" />
             </div>
             <div class="cart__item-info">
-              <h3>Сырный цыпленок</h3>
-              <p>тонкое тесто, 26 см.</p>
+              <h4>MIDNIGHT PROJECT</h4>
+              <h3>Single Hop Player: Enigma</h3>
+              <p>самовывоз, 1 l</p>
             </div>
             <div class="cart__item-count">
               <div class="button button--outline button--circle cart__item-count-minus">
@@ -163,7 +168,7 @@ const Cart = () => {
               </div>
             </div>
             <div class="cart__item-price">
-              <b>770 ₽</b>
+              <b>12 Br</b>
             </div>
             <div class="cart__item-remove">
               <div class="button button--outline button--circle">
@@ -179,17 +184,17 @@ const Cart = () => {
         </div>
         <div class="cart__bottom">
           <div class="cart__bottom-details">
-            <span> Всего пицц: <b>3 шт.</b> </span>
-            <span> Сумма заказа: <b>900 ₽</b> </span>
+            <span> Всего пива: <b>3 шт.</b> </span>
+            <span> Сумма заказа: <b>900 Br</b> </span>
           </div>
           <div class="cart__bottom-buttons">
-            <a href="/" class="button button--outline button--add go-back-btn">
+            <Link to="/" class="button button--outline button--add go-back-btn">
               <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
 
               <span>Вернуться назад</span>
-            </a>
+            </Link>
             <div class="button pay-btn">
               <span>Оплатить сейчас</span>
             </div>

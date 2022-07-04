@@ -4,7 +4,7 @@ import React from "react";
 const BeerBlock = ({ title, price, image, sizes, types }) => {
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
-  const typeConteiner = ['бутылочное', 'разливное'];
+  const typeConteiner = ['забронировать', 'самовывоз'];
 
   return (
     <div className="beer-block-wrapper">
