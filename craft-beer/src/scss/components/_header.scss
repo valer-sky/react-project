@@ -1,13 +1,28 @@
 @import '../variables';
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
   border-bottom: 1px solid $gray-line;
   padding: 40px 0;
+
+  @media (max-width: 690px) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -30px;
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 690px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-top: 0px;
+    }
   }
 
   &__logo {

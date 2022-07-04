@@ -7,7 +7,8 @@ const BeerBlock = ({ title, price, image, sizes, types}) => {
   const typeConteiner = ['бутылочное', 'разливное'];
 
     return(
-        <div className="pizza-block">
+      <div className="beer-block-wrapper">
+          <div className="pizza-block">
         <img
     clasNames="pizza-block__image"
     src={image}
@@ -45,6 +46,7 @@ const BeerBlock = ({ title, price, image, sizes, types}) => {
     </button>
   </div>
   </div> 
+      </div>
 
     )
 }
