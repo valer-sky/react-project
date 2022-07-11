@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
+
 import { Provider } from 'react-redux';
 
 import './scss/app.scss';
@@ -12,8 +13,11 @@ export const SearchContext = React.createContext();
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('');
+  
+
  return (
     <div className="wrapper">
+     
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
       <Header />
         <div className="content">
