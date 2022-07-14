@@ -61,13 +61,15 @@ const Cart = () => {
 
               <span>Вернуться назад</span>
             </Link>
-            <div className="button pay-btn">
-              <span>Оплатить сейчас</span>
+            
+            <Link to="/order" className="button pay-btn">
+              <span>Оформить заказ</span>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 
