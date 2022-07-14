@@ -2,9 +2,10 @@ import logoProbka from '../assets/img/logo-image.jpg';
 import { Link } from "react-router-dom";
 import { useSelector} from 'react-redux';
 import Search from './Search';
+import { selectCart } from '../redux/slices/cartSlice';
 
 const Header = () => {
-  const {items, totalPrice} = useSelector((state) => state.cart);
+  const {items, totalPrice} = useSelector(selectCart);
   const totalCount = items.reduce((sum, item) => sum + item.count,0);
     return(
       <div className="header">

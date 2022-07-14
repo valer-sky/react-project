@@ -12,7 +12,7 @@ import Sort, { list } from '../components/Sort';
 import BeerBlock from '../components/BeerBlock/index.jsx';
 import Skeleton from '../components/BeerBlock/Skeleton';
 import Pagination from '../components/Pagination';
-import { SearchContext } from '../App';
+// import { SearchContext } from '../App';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -21,10 +21,10 @@ const Home = () => {
   const isMounted = React.useRef(false);
   const {items, status }= useSelector((state) => state.beer)
 
-  const  {categoryId, sort, currentPage } = useSelector((state) => state.filter);
+  const  {categoryId, sort, currentPage, searchValue } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty; 
-  const { searchValue } = React.useContext(SearchContext);
-  // const [isLoading, setIsLoading] = React.useState(true);
+  
+  
   const onChangeCategory = (id) => {
       dispatch(setCategoryId(id));
     }
