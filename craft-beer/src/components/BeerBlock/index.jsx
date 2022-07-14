@@ -19,7 +19,7 @@ const BeerBlock = ({ id, title, price, image, sizes, types }) => {
       title, 
       price, 
       image, 
-      type: typeConteiner[activeType],
+      types: typeConteiner[activeType],
       size: sizes[activeSize],
     };
     dispatch(addItem(item));

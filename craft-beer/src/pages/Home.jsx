@@ -1,11 +1,12 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import qs from 'qs';
 import { useNavigate} from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filterSlice';
+import {  fetchBeers } from '../redux/slices/BeersSlice';
 import Categories from '../components/Categories';
 import Sort, { list } from '../components/Sort';
 import BeerBlock from '../components/BeerBlock/index.jsx';
@@ -18,12 +19,12 @@ const Home = () => {
   const dispatch = useDispatch();
   const isSearch = React.useRef(false);  // отсутствует далее
   const isMounted = React.useRef(false);
+  const {items, status }= useSelector((state) => state.beer)
 
   const  {categoryId, sort, currentPage } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty; 
   const { searchValue } = React.useContext(SearchContext);
-  const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+  // const [isLoading, setIsLoading] = React.useState(true);
   const onChangeCategory = (id) => {
       dispatch(setCategoryId(id));
     }
@@ -32,20 +33,26 @@ const Home = () => {
     dispatch(setCurrentPage(page));
   }
 
-  const fetchBeers = () => {
-    setIsLoading(true);
+  const getBeers= async () => {
+    
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const order = sortType.includes('-') ? 'asc' : 'desc';
     const sortBy = sortType.replace('-', '');
     const search = searchValue ? `&search=${searchValue}` : '';
 
-    axios
-      .get(`https://62becc69be8ba3a10d5be2ad.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`,)
-      .then((res) => {
-        setItems(res.data);
-        setIsLoading(false);
-    });
-  }
+   
+   
+      dispatch(
+        fetchBeers({
+        category,
+        order,
+        sortBy,
+        search,
+        currentPage,
+      }));
+     
+    window.scrollTo(0, 0);
+  };
   // Если изменили параметры и был первый рендер
   React.useEffect(() => {
     if(isMounted.current) {
@@ -78,11 +85,11 @@ const Home = () => {
     // Если был первый рендер, то запрашиваем пиво
     React.useEffect(() => {
       if(!isSearch.current) {
-        fetchBeers();
+        getBeers();
       }
 
       isSearch.current = false;
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
       }, [categoryId, sortType, searchValue, currentPage]);
 
   const craftBeer =  items.map((obj) =>
@@ -105,10 +112,15 @@ const Home = () => {
         </div>
         <h2 className="content__title">Всё пиво</h2>
         <div className="content__items">
-          { isLoading 
-          ? skeletons
-          : craftBeer}
-         </div>
+        {status === 'error' ? (
+        <div className="content__error-info">
+          <h2>Произошла ошибка 😕</h2>
+          <p>К сожалению, не удалось получить пиво. Попробуйте повторить попытку позже.</p>
+        </div>
+      ) : (
+        <div className="content__items">{status === 'loading' ? skeletons : craftBeer}</div>
+      )}
+        </div>
          <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
         </div>
     );
