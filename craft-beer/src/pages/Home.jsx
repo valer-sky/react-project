@@ -94,6 +94,7 @@ const Home = () => {
 
   const craftBeer =  items.map((obj) =>
     <BeerBlock key={obj.id}
+      id={obj.id}
       title={obj.title} 
       price={obj.price} 
       image={obj.imageUrl}

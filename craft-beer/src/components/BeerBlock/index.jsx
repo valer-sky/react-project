@@ -29,7 +29,7 @@ const BeerBlock = ({ id, title, price, image, sizes, types }) => {
     <div className="beer-block-wrapper">
       <div className="beer-block">
         <img
-          clasNames="beer-block__image"
+          classNames="beer-block__image"
           src={image}
         />
         <h4 className="beer-block__title">{title}</h4>
