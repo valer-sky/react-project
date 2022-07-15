@@ -388,6 +388,13 @@ body {
   }
 }
 
+  .beer--info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
 .cart {
   &__top {
     display: flex;

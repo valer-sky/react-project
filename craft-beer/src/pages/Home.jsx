@@ -1,7 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
 import qs from 'qs';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -93,14 +93,16 @@ const Home = () => {
       }, [categoryId, sortType, searchValue, currentPage]);
 
   const craftBeer =  items.map((obj) =>
-    <BeerBlock key={obj.id}
-      id={obj.id}
-      title={obj.title} 
-      price={obj.price} 
-      image={obj.imageUrl}
-      sizes={obj.sizes}
-      types={obj.types}
-      />);
+    <Link key={obj.id} to={`beer/${obj.id}`}>
+    <BeerBlock 
+    id={obj.id}
+    title={obj.title} 
+    price={obj.price} 
+    image={obj.imageUrl}
+    sizes={obj.sizes}
+    types={obj.types}
+    />
+    </Link>);
 
     const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
   
