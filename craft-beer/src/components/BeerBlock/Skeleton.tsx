@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-const Sleleton = (props) => (
+const Sleleton: React.FC = (props: any) => (
   <ContentLoader
     className='beer-block'
     speed={2}

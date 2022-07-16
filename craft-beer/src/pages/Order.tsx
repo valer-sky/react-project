@@ -5,7 +5,7 @@ import { clearItems } from '../redux/slices/cartSlice';
 
 
 
-const Order = () => {
+const Order: React.FC = () => {
     const dispatch = useDispatch();
     const onClickClear = () => {
         dispatch(clearItems())

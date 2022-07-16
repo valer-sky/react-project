@@ -4,7 +4,9 @@ import { addItem, selectCartItemById } from '../../redux/slices/cartSlice';
 
 const typeConteiner = ['забронировать', 'самовывоз'];
 
-const BeerBlock = ({ id, title, price, image, sizes, types }) => {
+type BeerBlockProps = {id: string; title: string; price: number,  image: string,  types: number[], sizes: number[]}
+
+const BeerBlock: React.FC<BeerBlockProps>= ({ id, title, price, image, sizes, types }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(id));
   const [activeType, setActiveType] = React.useState(0);
@@ -29,7 +31,7 @@ const BeerBlock = ({ id, title, price, image, sizes, types }) => {
     <div className="beer-block-wrapper">
       <div className="beer-block">
         <img
-          classNames="beer-block__image"
+          className="beer-block__image"
           src={image}
         />
         <h4 className="beer-block__title">{title}</h4>

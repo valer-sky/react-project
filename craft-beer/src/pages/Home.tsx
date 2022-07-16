@@ -9,12 +9,12 @@ import { setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filte
 import {  fetchBeers } from '../redux/slices/BeersSlice';
 import Categories from '../components/Categories';
 import Sort, { list } from '../components/Sort';
-import BeerBlock from '../components/BeerBlock/index.jsx';
+import BeerBlock from '../components/BeerBlock/index.tsx';
 import Skeleton from '../components/BeerBlock/Skeleton';
 import Pagination from '../components/Pagination';
 // import { SearchContext } from '../App';
 
-const Home = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSearch = React.useRef(false);  // отсутствует далее
@@ -25,11 +25,11 @@ const Home = () => {
   const sortType = sort.sortProperty; 
   
   
-  const onChangeCategory = (id) => {
+  const onChangeCategory = (id: number) => {
       dispatch(setCategoryId(id));
     }
 
-  const onChangePage = page => {
+  const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   }
 
@@ -43,6 +43,7 @@ const Home = () => {
    
    
       dispatch(
+        //@ts-ignore
         fetchBeers({
         category,
         order,
@@ -92,7 +93,7 @@ const Home = () => {
       // window.scrollTo(0, 0);
       }, [categoryId, sortType, searchValue, currentPage]);
 
-  const craftBeer =  items.map((obj) =>
+  const craftBeer =  items.map((obj: any) =>
     <Link key={obj.id} to={`beer/${obj.id}`}>
     <BeerBlock 
     id={obj.id}
