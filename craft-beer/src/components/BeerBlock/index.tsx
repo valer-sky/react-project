@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, selectCartItemById } from '../../redux/slices/cartSlice';
+import { Link} from 'react-router-dom';
+import { addItem, CartItem, selectCartItemById } from '../../redux/slices/cartSlice';
 
 const typeConteiner = ['забронировать', 'самовывоз'];
 
@@ -16,13 +17,14 @@ const BeerBlock: React.FC<BeerBlockProps>= ({ id, title, price, image, sizes, ty
   
 
   const onClickAdd = () => {
-    const item = {
+    const item: CartItem = {
       id,
       title, 
       price, 
       image, 
       types: typeConteiner[activeType],
       size: sizes[activeSize],
+      count: 0
     };
     dispatch(addItem(item));
   }
@@ -30,11 +32,13 @@ const BeerBlock: React.FC<BeerBlockProps>= ({ id, title, price, image, sizes, ty
   return (
     <div className="beer-block-wrapper">
       <div className="beer-block">
+      <Link key={id} to={`beer/${id}`}>
         <img
           className="beer-block__image"
           src={image}
         />
         <h4 className="beer-block__title">{title}</h4>
+        </Link>
         <div className="beer-block__selector">
           <ul>
             {types.map((typeId) => (
