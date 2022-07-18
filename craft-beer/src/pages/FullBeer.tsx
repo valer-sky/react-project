@@ -12,18 +12,19 @@ const FullBeer: React.FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    React.useEffect(() => {
-        async function fetchBeer() {
-            try {
-                const {data} = await axios.get('https://62becc69be8ba3a10d5be2ad.mockapi.io/items/' + id);
-                setBeer(data);
-            } catch (error) {
-                alert("Ошибка при получении пива!!!");
-                navigate('/');
-            }
+    async function fetchBeer() {
+        try {
+            const {data} = await axios.get('https://62becc69be8ba3a10d5be2ad.mockapi.io/items/' + id);
+            setBeer(data);
+        } catch (error) {
+            alert("Ошибка при получении пива!!!");
+            navigate('/');
         }
+    }
+
+    React.useEffect(() => {
         fetchBeer();
-    }, []);
+    }, []);//eslint-disable-line
 
         if(!beer) {
             return <>Загрузка...</>

@@ -8,12 +8,12 @@ type SotrItem = {
 };
 
 export const list: SotrItem[] = [
-  {name: 'популярности (desc)', sortProperty: SortPropertyEnum.REITING_DESC},
-  {name: 'популярности (asc)', sortProperty: SortPropertyEnum.REITING_ASC},
-  {name: 'цене (desc)', sortProperty: SortPropertyEnum.PRICE_DESC}, 
-  {name: 'цене (asc)', sortProperty: SortPropertyEnum.PRICE_ASC}, 
-  {name: 'алфавиту (desc)', sortProperty: SortPropertyEnum.TITLE_DESC},
-  {name: 'алфавиту (asc)', sortProperty: SortPropertyEnum.TITLE_ASC}
+  {name: 'популярности 🠛', sortProperty: SortPropertyEnum.REITING_DESC},
+  {name: 'популярности 🠙', sortProperty: SortPropertyEnum.REITING_ASC},
+  {name: 'цене 🠛', sortProperty: SortPropertyEnum.PRICE_DESC}, 
+  {name: 'цене 🠙', sortProperty: SortPropertyEnum.PRICE_ASC}, 
+  {name: 'алфавиту 🠛', sortProperty: SortPropertyEnum.TITLE_DESC},
+  {name: 'алфавиту 🠙', sortProperty: SortPropertyEnum.TITLE_ASC}
 ];
 
 const SortPopup = () => {
@@ -37,7 +37,7 @@ const SortPopup = () => {
     }
     document.body.addEventListener('click',handleClickOutside);
       return () => document.body.removeEventListener('click', handleClickOutside);
-    }, []);
+  }, []);
 
     return(
       <div ref={sortRef} className="sort">
@@ -58,18 +58,18 @@ const SortPopup = () => {
                 <span onClick={() => setOpen(!open)}>{sort.name}</span>
               </div>
               {open &&(
-                   <div className="sort__popup">
-                   <ul>
-                   {list.map((obj, i) => (
-                  <li 
-                  key={i} 
-                  onClick={() => onCkickListItem(obj)} 
-                  className={sort.sortProperty === obj.sortProperty ? 'active' : '' }>
-                  {obj.name}
-                  </li>
-                      ))}
-                   </ul>
-                 </div>
+                <div className="sort__popup">
+                  <ul>
+                    {list.map((obj, i) => (
+                      <li 
+                        key={i} 
+                        onClick={() => onCkickListItem(obj)} 
+                        className={sort.sortProperty === obj.sortProperty ? 'active' : '' }>
+                          {obj.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
              
             </div>
