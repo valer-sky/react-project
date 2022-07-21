@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 export type CartItem = {
@@ -63,6 +63,10 @@ const cartSlice = createSlice({
 
 export const selectCart = (state: RootState) => state.cart; //селектор (функция вытаскивания)
 export const selectCartItemById = (id: string) => (state: RootState) => state.cart.items.find((obj) => obj.id === id)
+
+// const selectSelf = (state: RootState) => state
+// export const selectBeer = createSelector(selectSelf, (state) => state.beer)
+
 
 export const { addItem, removeItem, clearItems, minusItem } = cartSlice.actions;
 

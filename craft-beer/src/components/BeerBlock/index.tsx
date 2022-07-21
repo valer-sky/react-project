@@ -1,17 +1,24 @@
-import React from "react";
+import React, { FC, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link} from 'react-router-dom';
 import { addItem, CartItem, selectCartItemById } from '../../redux/slices/cartSlice';
 
 const typeConteiner = ['доставка', 'самовывоз'];
 
-type BeerBlockProps = {id: string; title: string; price: number,  image: string,  types: number[], sizes: number[]}
+type BeerBlockProps = {
+  id: string; 
+  title: string; 
+  price: number,  
+  image: string,  
+  types: number[], 
+  sizes: number[]
+}
 
-const BeerBlock: React.FC<BeerBlockProps>= ({ id, title, price, image, sizes, types }) => {
+const BeerBlock: FC<BeerBlockProps>= ({ id, title, price, image, sizes, types }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(id));
-  const [activeType, setActiveType] = React.useState(0);
-  const [activeSize, setActiveSize] = React.useState(0);
+  const [activeType, setActiveType] = useState(0);
+  const [activeSize, setActiveSize] = useState(0);
 
   const addedCount = cartItem ? cartItem.count : 0;
   
@@ -36,18 +43,31 @@ const BeerBlock: React.FC<BeerBlockProps>= ({ id, title, price, image, sizes, ty
         <img
           className="beer-block__image"
           src={image}
+          alt={title}
         />
         <h4 className="beer-block__title">{title}</h4>
-        </Link>
+      </Link>
         <div className="beer-block__selector">
           <ul>
             {types.map((typeId) => (
-              <li key={typeId} onClick={() => setActiveType(typeId)} className={activeType === typeId ? 'active' : ''}>{typeConteiner[typeId]}</li>
+              <li 
+                key={typeId} 
+                onClick={() => setActiveType(typeId)} 
+                className={activeType === typeId ? 'active' : ''}
+              >
+                {typeConteiner[typeId]}
+              </li>
             ))}
           </ul>
           <ul>
             {sizes.map((size, i) => (
-              <li key={size} onClick={() => setActiveSize(i)} className={activeSize === i ? 'active' : ''}>{size} l</li>
+              <li 
+                key={size} 
+                onClick={() => setActiveSize(i)} 
+                className={activeSize === i ? 'active' : ''}
+              >
+                  {size} l
+                </li>
             ))}
           </ul>
         </div>
@@ -70,9 +90,8 @@ const BeerBlock: React.FC<BeerBlockProps>= ({ id, title, price, image, sizes, ty
             {addedCount > 0 && <i>{addedCount}</i>}
           </button>
         </div>
- </div>
-         </div>
-
+      </div>
+    </div>
   )
 }
 
