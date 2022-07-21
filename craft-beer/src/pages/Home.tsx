@@ -94,7 +94,7 @@ const Home: React.FC = () => {
 
   const craftBeer =  items.map((obj: any) =>
     
-    <BeerBlock 
+    <BeerBlock key={obj.id}
     id={obj.id}
     title={obj.title} 
     price={obj.price} 
