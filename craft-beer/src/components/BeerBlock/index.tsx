@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link} from 'react-router-dom';
 import { addItem, CartItem, selectCartItemById } from '../../redux/slices/cartSlice';
 
-const typeConteiner = ['забронировать', 'самовывоз'];
+const typeConteiner = ['доставка', 'самовывоз'];
 
 type BeerBlockProps = {id: string; title: string; price: number,  image: string,  types: number[], sizes: number[]}
 

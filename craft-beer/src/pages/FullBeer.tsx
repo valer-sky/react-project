@@ -8,6 +8,12 @@ const FullBeer: React.FC = () => {
         subtitle: string;
         price: number;
         imageUrl: string;
+        brewery: string;
+        style: string;
+        alcohol: string;
+        bitter: string;
+        hop: string;
+
     }>();
     const { id } = useParams();
     const navigate = useNavigate();
@@ -37,7 +43,14 @@ const FullBeer: React.FC = () => {
                 <div className="beer__info--block">
                 <h2>{beer.title}</h2>
                 <h3>{beer.subtitle}</h3>
+                
+                <p>{beer.brewery}</p>
+                <p>{beer.style}</p>
+                <p>{beer.alcohol}</p>
+                <p>{beer.bitter}</p>
+                <p>{beer.hop}</p>
                 <h4>{beer.price} Br.</h4>
+
                 </div>
                
                 </div>

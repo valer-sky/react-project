@@ -8,16 +8,16 @@ type SotrItem = {
 };
 
 export const list: SotrItem[] = [
-  {name: 'популярности (desc)', sortProperty: SortPropertyEnum.REITING_DESC},
-  {name: 'популярности (asc)', sortProperty: SortPropertyEnum.REITING_ASC},
-  {name: 'цене (desc)', sortProperty: SortPropertyEnum.PRICE_DESC}, 
-  {name: 'цене (asc)', sortProperty: SortPropertyEnum.PRICE_ASC}, 
-  {name: 'алфавиту (desc)', sortProperty: SortPropertyEnum.TITLE_DESC},
-  {name: 'алфавиту (asc)', sortProperty: SortPropertyEnum.TITLE_ASC}
+  {name: 'популярности 🠓', sortProperty: SortPropertyEnum.REITING_DESC},
+  {name: 'популярности 🠑', sortProperty: SortPropertyEnum.REITING_ASC},
+  {name: 'цене 🠓', sortProperty: SortPropertyEnum.PRICE_DESC}, 
+  {name: 'цене 🠑', sortProperty: SortPropertyEnum.PRICE_ASC}, 
+  {name: 'алфавиту 🠓', sortProperty: SortPropertyEnum.TITLE_DESC},
+  {name: 'алфавиту 🠑', sortProperty: SortPropertyEnum.TITLE_ASC}
 ];
 
 const SortPopup = () => {
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
   const sort = useSelector(selectSort);
   const sortRef = React.useRef<HTMLDivElement>(null);
   

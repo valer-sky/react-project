@@ -31,7 +31,7 @@ const CartItemBlock: React.FC<CartItemProps> = ({id, title, price, count, image,
             <div className="cart__item-info">
               <h4>{title}</h4>
               <h3>{subtitle}</h3>
-              <p>{types} {size} L.</p>
+              <p>{types} {size} l.</p>
             </div>
             <div className="cart__item-count">
               <div onClick={onClickMinus} className="button button--outline button--circle cart__item-count-minus">
