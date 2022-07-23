@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const isSearch = React.useRef(false);  // отсутствует далее
-  const isMounted = React.useRef(false);
+  // const isMounted = React.useRef(false);
   const {items, status }= useSelector((state: any) => state.beer)
 
   const  {categoryId, sort, currentPage, searchValue } = useSelector((state: any) => state.filter);

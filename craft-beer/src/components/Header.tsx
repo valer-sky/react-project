@@ -8,13 +8,25 @@ import { selectCart } from '../redux/slices/cartSlice';
 const Header: React.FC = () => {
   const {items, totalPrice} = useSelector(selectCart);
   const location = useLocation();
+  const isMounted = React.useRef(false);
+
   const totalCount = items.reduce((sum: number, item: any) => sum + item.count,0);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('cart', json);
+    }
+    isMounted.current = true;
+  }, [items]);
+
+
     return(
       <div className="header">
       <div className="container">
        <Link to="/">
        <div className="header__logo">
-          <img width="100" src={logoProbka} alt="Прбка logo" />
+          <img width="100" src={logoProbka} alt="Пробка logo" />
           <div>
             <h1>Пробка Taproom</h1>
             <p>самое вкусное пиво в городе</p>
