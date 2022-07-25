@@ -13,9 +13,7 @@
  &-wrapper {
   display: flex;
   justify-content: center;
-
-  
- }
+  }
 
   img {
     max-width: 100%;
@@ -23,10 +21,6 @@
     border-radius: 0.3rem;
     // width: 200px;
     height: 250px;
-
-    // &:hover {
-    //   transition: all .15s cubic-bezier(0.25,.1,.25,1);
-    // }
   }
 
   &__title {

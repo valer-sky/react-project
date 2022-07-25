@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link} from 'react-router-dom';
 import { addItem, CartItem, selectCartItemById } from '../../redux/slices/cartSlice';
@@ -22,8 +22,7 @@ const BeerBlock: FC<BeerBlockProps>= ({ id, title, price, image, sizes, types })
 
   const addedCount = cartItem ? cartItem.count : 0;
   
-
-   const onClickAdd = () => {
+  const onClickAdd = () => {
     const item: CartItem = {
       id,
       title, 

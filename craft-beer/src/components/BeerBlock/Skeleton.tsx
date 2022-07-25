@@ -10,7 +10,6 @@ const Sleleton: React.FC = (props: any) => (
     viewBox="0 0 280 500"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
-
   >
     <rect x="16" y="10" rx="15" ry="15" width="250" height="250" />
     <rect x="83" y="85" rx="0" ry="0" width="5" height="40" />

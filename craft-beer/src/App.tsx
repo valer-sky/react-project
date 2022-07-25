@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import './scss/app.scss';
 
@@ -8,7 +7,6 @@ import NotFound from './pages/NotFound';
 import Order from './pages/Order';
 import FullBeer from './pages/FullBeer';
 import MainLayout from './layouts/MainLayout';
-
 
 function App() {
   return (
