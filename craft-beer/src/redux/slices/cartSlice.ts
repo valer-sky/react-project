@@ -3,7 +3,6 @@ import { calcTotalPrice } from '../../utils/calcTotalPrice';
 import { getCartFromLS } from '../../utils/getCartFromLS';
 import { RootState } from '../store';
 
-
 export type CartItem = {
     id: string;
     title: string;
@@ -66,10 +65,6 @@ const cartSlice = createSlice({
 
 export const selectCart = (state: RootState) => state.cart; //селектор (функция вытаскивания)
 export const selectCartItemById = (id: string) => (state: RootState) => state.cart.items.find((obj) => obj.id === id)
-
-// const selectSelf = (state: RootState) => state
-// export const selectBeer = createSelector(selectSelf, (state) => state.beer)
-
 
 export const { addItem, removeItem, clearItems, minusItem } = cartSlice.actions;
 

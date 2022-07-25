@@ -1,8 +1,5 @@
 import axios from 'axios';
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { CartItem } from './cartSlice';
-import { Sort } from './filterSlice';
- 
 
 export const fetchBeers = createAsyncThunk('beer/fetchBeerStatus',
     async (params: SearchBeerParams) => {
@@ -78,21 +75,7 @@ const beersSlice = createSlice({
             state.items = [];
         });
       },
-    // extraReducers: {
-    //     [fetchBeers.pending]: (state) => {
-    //         state.status = 'loading';
-    //         state.items = [];
-    //     },
-    //     [fetchBeers.fulfilled]: (state, action) => {
-    //         state.items = action.payload
-    //         state.status = 'succses';
-    //     },
-        
-    //     [fetchBeers.rejected]: (state) => {
-    //         state.status = 'error';
-    //         state.items = [];
-    //     }
-    // }       
+   
 });
 
 export const { setItems } = beersSlice.actions;

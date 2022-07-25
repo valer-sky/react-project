@@ -23,20 +23,19 @@ const Header: React.FC = () => {
 
     return(
       <div className="header">
-      <div className="container">
-       <Link to="/">
-       <div className="header__logo">
-          <img width="100" src={logoProbka} alt="Пробка logo" />
-          <div>
-            <h1>Пробка Taproom</h1>
-            <p>самое вкусное пиво в городе</p>
-          </div>
-        </div>
-       </Link>
-       {location.pathname !== '/cart' && <Search />}
-       <div className="header__cart">
-       {location.pathname !== '/cart' && (
-        
+        <div className="container">
+          <Link to="/">
+            <div className="header__logo">
+              <img width="100" src={logoProbka} alt="Пробка logo" />
+                <div>
+                  <h1>Пробка Taproom</h1>
+                  <p>самое вкусное пиво в городе</p>
+                </div>
+            </div>
+           </Link>
+          {location.pathname !== '/cart' && <Search />}
+          <div className="header__cart">
+          {location.pathname !== '/cart' && (
           <Link to="/cart" className="button button--cart">
             <span>{totalPrice}</span>
             <div className="button__delimiter"></div>
@@ -73,7 +72,6 @@ const Header: React.FC = () => {
           </Link>
           )}
         </div>
-        
       </div>
     </div>
     )
