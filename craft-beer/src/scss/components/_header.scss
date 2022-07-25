@@ -17,11 +17,20 @@
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 690px) {
+    @media (max-width: 1160px) {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
       flex-direction: column;
-      margin-top: 0px;
+      // margin-bottom: 30px;
+      .header__logo {
+        margin-bottom: 20px;
+      }
+      .header__cart {
+        margin-top: 20px;
+      }
+      
     }
   }
 

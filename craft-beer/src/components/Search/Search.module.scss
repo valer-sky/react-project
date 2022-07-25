@@ -1,6 +1,9 @@
 .root {
     position: relative;
     left: -80px;
+    @media (max-width: 1160px) {
+        left: 0px;
+    }
 }
 
 .input {
@@ -11,9 +14,15 @@
     font-size: 16px;
     padding-left: 40px;
 
+    @media (max-width: 425px) {
+        width: 200px;
+    }
+
     &:focus {
         border: 1px solid rgba(0, 0, 0, 0.3); 
     }
+
+    
 }
 
 .icon {

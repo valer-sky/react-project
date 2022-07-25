@@ -6,6 +6,10 @@
 
 body {
   background-color: $background;
+
+  @media (max-width: 425px) {
+    background-color: #fff;
+  }
 }
 
 .wrapper {
@@ -111,8 +115,20 @@ body {
 .cart {
   &__top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 493px) {
+        margin-top: -80px;
+        display: flex;
+        align-items: center;
+        margin-left: 80px;
+
+       
+    }
+
+  
   }
 
   .content__title {
