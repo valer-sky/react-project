@@ -124,11 +124,7 @@ body {
         display: flex;
         align-items: center;
         margin-left: 80px;
-
-       
     }
-
-  
   }
 
   .content__title {
@@ -364,6 +360,9 @@ body {
       }
 
       .pay-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 16px;
         font-weight: 600;
         width: 210px;
