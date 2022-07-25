@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+
 
 const FullBeer: React.FC = () => {
     const [beer, setBeer] = React.useState<{
@@ -40,6 +41,7 @@ const FullBeer: React.FC = () => {
             <div className="container beer--info">
                 <div className="image__block">
                 <img src={beer.imageUrl} />
+                
                 </div>
                 <div className="beer__info--block">
                 <h2>{beer.title}</h2>
@@ -55,7 +57,13 @@ const FullBeer: React.FC = () => {
                 </div>
                
                 </div>
-            
+                <Link to="/">
+                 <button className="button button--outline button--add">
+                  <span>Для заказа вернитесь назад</span>
+                 </button>
+                </Link>
+                
+                
         </div>
     );
 };

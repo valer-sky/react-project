@@ -23,7 +23,7 @@ const BeerBlock: FC<BeerBlockProps>= ({ id, title, price, image, sizes, types })
   const addedCount = cartItem ? cartItem.count : 0;
   
 
-  const onClickAdd = () => {
+   const onClickAdd = () => {
     const item: CartItem = {
       id,
       title, 
