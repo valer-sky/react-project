@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/valer-sky/react-project/static/css/main.f579cf6a.css",
+    "main.js": "/valer-sky/react-project/static/js/main.36b60674.js",
+    "static/media/cart.jpg": "/valer-sky/react-project/static/media/cart.804d377d4d917b905d13.jpg",
+    "static/media/logo-image.jpg": "/valer-sky/react-project/static/media/logo-image.97d8d5d0e088e46d6f51.jpg",
+    "index.html": "/valer-sky/react-project/index.html",
+    "main.f579cf6a.css.map": "/valer-sky/react-project/static/css/main.f579cf6a.css.map",
+    "main.36b60674.js.map": "/valer-sky/react-project/static/js/main.36b60674.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f579cf6a.css",
+    "static/js/main.36b60674.js"
+  ]
+}
