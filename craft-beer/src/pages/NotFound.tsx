@@ -3,9 +3,7 @@ import NotFoundBlock from '../components/NotFoundBlock';
 
 const NotFound: React.FC = () => {
     return (
-        <>
-        <NotFoundBlock />
-        </>
+        <NotFoundBlock />    
     )
 };
 
