@@ -26,13 +26,15 @@ const CartItemBlock: React.FC<CartItemProps> = ({id, title, price, count, image,
  
   return(
     <div className="cart__item">
-      <div className="cart__item-img">
-        <img className="beer-block__image" src={image} alt="beer" />
-      </div>
-      <div className="cart__item-info">
-        <h4>{title}</h4>
-        <h3>{subtitle}</h3>
-        <p>{types} {size} l.</p>
+      <div className="cart__item-left">
+        <div className="cart__item-img">
+          <img className="beer-block__image" src={image} alt="beer" />
+        </div>
+        <div className="cart__item-info">
+          <h4>{title}</h4>
+          <h3>{subtitle}</h3>
+          <p>{types} {size} l.</p>
+        </div>
       </div>
       <div className="cart__item-count">
         <button 
