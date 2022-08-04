@@ -50,6 +50,7 @@ const cartSlice = createSlice({
             if(findItem) {
                 findItem.count--;
             }
+            state.totalPrice = calcTotalPrice(state.items);
         },
 
         removeItem(state, action: PayloadAction<string>) {
